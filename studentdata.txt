@@ -1,0 +1,65 @@
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| employee           |
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| sys                |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> create database stdinfo;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> use stdinfo;
+Database changed
+mysql> create table stddata(id int,name varchar(10),dept varchar(10),yop int);
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> insert into stddata values(1,"Ram","Mec",2020),(2,"John","ECE",2020),(3,"Priya","EEE",2019),(4,"Divya","IT",2018);
+Query OK, 4 rows affected (0.02 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> select * from stddata;
++------+-------+------+------+
+| id   | name  | dept | yop  |
++------+-------+------+------+
+|    1 | Ram   | Mec  | 2020 |
+|    2 | John  | ECE  | 2020 |
+|    3 | Priya | EEE  | 2019 |
+|    4 | Divya | IT   | 2018 |
++------+-------+------+------+
+4 rows in set (0.00 sec)
+
+mysql> select * from stddata where yop=2020;
++------+------+------+------+
+| id   | name | dept | yop  |
++------+------+------+------+
+|    1 | Ram  | Mec  | 2020 |
+|    2 | John | ECE  | 2020 |
++------+------+------+------+
+2 rows in set (0.00 sec)
+
+
+mysql> select * from stddata where dept="IT";
++------+-------+------+------+
+| id   | name  | dept | yop  |
++------+-------+------+------+
+|    4 | Divya | IT   | 2018 |
++------+-------+------+------+
+1 row in set (0.00 sec)
+
+mysql> select name,dept from stddata;
++-------+------+
+| name  | dept |
++-------+------+
+| Ram   | Mec  |
+| John  | ECE  |
+| Priya | EEE  |
+| Divya | IT   |
++-------+------+
+4 rows in set (0.00 sec)
